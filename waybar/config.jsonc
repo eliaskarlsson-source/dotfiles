@@ -1,0 +1,133 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 56,
+  "margin": "8 8 0 8",
+  "spacing": 4,
+
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["clock"],
+  "modules-right": ["pulseaudio", "cpu", "memory", "temperature", "network", "battery", "tray"],
+
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "󰎤",
+      "2": "󰎧",
+      "3": "󰎪",
+      "4": "󰎭",
+      "5": "󰎰",
+      "6": "󰎶",
+      "7": "󰎹",
+      "8": "󰎼",
+      "9": "󰽽",
+      "10": "󰽾"
+    },
+    "persistent_workspaces": {
+      "*": 5
+    },
+    "on-click": "activate"
+  },
+
+  "hyprland/window": {
+    "format": "󰖯 {}",
+    "separate-outputs": true,
+    "max-length": 50,
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "󰈹 $1",
+      "(.*) — Visual Studio Code": "󰨞 $1",
+      "(.*) — Thunar": "󰉋 $1",
+      "(.*) — Kitty": "󰆍 $1"
+    }
+  },
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "󰃭 {:%A, %B %d, %Y, %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "on-click-right": "mode"
+    },
+    "on-click": "gnome-calendar"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 muted",
+    "format-bluetooth": "󰂯 {volume}%",
+    "format-bluetooth-muted": "󰂲 muted",
+    "format-source": "󰍬 {volume}%",
+    "format-source-muted": "󰍭 muted",
+    "format-icons": {
+      "headphone": "󰋋",
+      "hands-free": "󰋋",
+      "headset": "󰋋",
+      "phone": "󰄜",
+      "portable": "󰋋",
+      "car": "󰄋",
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pavucontrol",
+    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  },
+
+  "cpu": {
+    "format": "󰻠 {usage}%",
+    "interval": 2,
+    "tooltip": true,
+    "on-click": "gnome-system-monitor"
+  },
+
+  "memory": {
+    "format": "󰍛 {used:0.1f}G/{total:0.1f}G",
+    "interval": 5,
+    "tooltip": true,
+    "on-click": "gnome-system-monitor"
+  },
+
+  "temperature": {
+    "thermal-zone": 1,
+    "critical-threshold": 90,
+    "format": "󰔏 {temperatureC}°C",
+    "format-icons": ["󰔏", "󰔏", "󰔏"],
+    "tooltip": true
+  },
+
+  "network": {
+    "format-wifi": "󰤨 {essid} ({signalStrength}%)",
+    "format-ethernet": "󰈀 {ifname}",
+    "format-linked": "󰈀 {ifname} (No IP)",
+    "format-disconnected": "󰤭 Disconnected",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) - {ipaddr}",
+    "tooltip-format-ethernet": "{ifname} - {ipaddr}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50,
+    "on-click": "nm-connection-editor"
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰂄 {capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+  },
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 8,
+    "show-passive-items": true
+  }
+}
