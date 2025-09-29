@@ -1,0 +1,295 @@
+* {
+  font-family: "JetBrains Mono Nerd Font", "JetBrains Mono", monospace;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+window#waybar {
+  background: rgba(30, 30, 46, 0.85);
+  color: #cdd6f4;
+  border-radius: 12px;
+  border: 1px solid rgba(203, 166, 247, 0.25);
+}
+
+.modules-left, .modules-center, .modules-right {
+  padding: 0;
+  margin: 0;
+}
+
+/* Workspaces */
+#workspaces {
+  background: rgba(49, 50, 68, 0.6);
+  border-radius: 12px;
+  margin: 4px 0 4px 8px;
+  padding: 0 2px;
+}
+
+#workspaces button {
+  background: transparent;
+  color: #6c7086;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 8px;
+  margin: 4px 1px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 11px;
+  min-width: 20px;
+}
+
+#workspaces button:hover {
+  background: rgba(203, 166, 247, 0.2);
+  color: #cba6f7;
+}
+
+#workspaces button.focused {
+  background: #cba6f7;
+  color: #1e1e2e;
+}
+
+#workspaces button.urgent {
+  background: #f38ba8;
+  color: #1e1e2e;
+}
+
+/* Clock */
+#clock {
+  background: rgba(49, 50, 68, 0.6);
+  border-radius: 12px;
+  padding: 8px 16px;
+  margin: 4px 0;
+  font-weight: 600;
+  color: #89b4fa;
+}
+
+/* System modules */
+#cpu, #memory, #temperature {
+  background: rgba(49, 50, 68, 0.6);
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin: 4px 2px;
+  color: #a6e3a1;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#cpu:hover, #memory:hover, #temperature:hover {
+  background: rgba(166, 227, 161, 0.2);
+}
+
+#temperature.critical {
+  background: #f38ba8;
+  color: #1e1e2e;
+}
+
+/* Network */
+/* network removed */
+
+/* Audio */
+#pulseaudio {
+  background: rgba(49, 50, 68, 0.6);
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin: 4px 2px;
+  color: #f9e2af;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#pulseaudio:hover {
+  background: rgba(249, 226, 175, 0.2);
+}
+
+#pulseaudio.muted {
+  color: #f38ba8;
+}
+
+/* Battery */
+/* battery removed */
+
+/* Tray */
+#tray {
+  background: rgba(49, 50, 68, 0.6);
+  border-radius: 12px;
+  padding: 8px;
+  margin: 4px 8px 4px 2px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: #f38ba8;
+}
+
+/* Tooltip */
+tooltip {
+  background: rgba(30, 30, 46, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #cdd6f4;
+  font-size: 12px;
+}
+
+/* Network */
+#network {
+  background: rgba(49, 50, 68, 0.6);
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin: 4px 2px;
+  color: #74c7ec;
+  transition: all 0.3s ease;
+}
+
+#network:hover { background: rgba(116, 199, 236, 0.18); }
+#network.disconnected { color: #f38ba8; }
+
+/* Disk */
+#disk {
+  background: rgba(49, 50, 68, 0.6);
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin: 4px 2px;
+  color: #a6e3a1;
+  transition: all 0.3s ease;
+}
+
+#disk:hover { background: rgba(166, 227, 161, 0.18); }
+
+/* Custom modules */
+#custom-weather {
+  background: rgba(49, 50, 68, 0.6);
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin: 4px 2px;
+  color: #fab387;
+  transition: all 0.3s ease;
+}
+
+#custom-weather:hover { background: rgba(250, 179, 135, 0.18); }
+
+#custom-updates {
+  background: rgba(49, 50, 68, 0.6);
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin: 4px 2px;
+  color: #f9e2af;
+  transition: all 0.3s ease;
+}
+
+#custom-updates:hover { background: rgba(249, 226, 175, 0.18); }
+#custom-updates.updates-available { animation: pulse 2s infinite; }
+
+/* Media player */
+#custom-media {
+  background: rgba(49, 50, 68, 0.6);
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin: 4px 2px;
+  color: #cba6f7;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+#custom-media:hover { background: rgba(203, 166, 247, 0.18); }
+#custom-media.playing { color: #a6e3a1; }
+#custom-media.paused { color: #f9e2af; }
+#custom-media.stopped { color: #585b70; }
+
+/* Theme switcher */
+#custom-theme {
+  background: rgba(49, 50, 68, 0.6);
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin: 4px 2px;
+  color: #cba6f7;
+  transition: all 0.3s ease;
+}
+
+#custom-theme:hover { background: rgba(203, 166, 247, 0.18); }
+
+/* Notifications */
+#custom-notification {
+  background: rgba(49, 50, 68, 0.6);
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin: 4px 2px;
+  color: #89b4fa;
+  transition: all 0.3s ease;
+}
+
+#custom-notification:hover { background: rgba(137, 180, 250, 0.18); }
+
+/* Idle inhibitor */
+#idle_inhibitor {
+  background: rgba(49, 50, 68, 0.6);
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin: 4px 2px;
+  color: #f38ba8;
+  transition: all 0.3s ease;
+}
+
+#idle_inhibitor.activated {
+  color: #a6e3a1;
+  background: rgba(166, 227, 161, 0.15);
+}
+
+#idle_inhibitor:hover { background: rgba(243, 139, 168, 0.18); }
+
+/* Backlight */
+#backlight {
+  background: rgba(49, 50, 68, 0.6);
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin: 4px 2px;
+  color: #fab387;
+  transition: all 0.3s ease;
+}
+
+#backlight:hover { background: rgba(250, 179, 135, 0.18); }
+
+/* GPU */
+#custom-gpu {
+  background: rgba(49, 50, 68, 0.55);
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin: 4px 2px;
+  color: #b4befe;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+#custom-gpu.warm { color: #f9e2af; }
+#custom-gpu.hot { color: #f38ba8; animation: pulse 1.2s infinite; }
+#custom-gpu:hover { background: rgba(180, 190, 254, 0.18); }
+
+/* DND */
+#custom-dnd {
+  background: rgba(49, 50, 68, 0.55);
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin: 4px 6px 4px 2px;
+  font-weight: 600;
+  color: #cba6f7;
+  transition: all 0.25s ease;
+}
+#custom-dnd.dnd-on { color: #585b70; background: rgba(203, 166, 247, 0.22); }
+#custom-dnd:hover { background: rgba(203, 166, 247, 0.15); }
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* Submap */
+#submap {
+  background: rgba(49, 50, 68, 0.6);
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin: 4px 2px;
+  color: #f38ba8;
+  font-weight: 600;
+}

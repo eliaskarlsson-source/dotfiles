@@ -1,0 +1,139 @@
+/* Enhanced Wofi Styling with Left Icons */
+window {
+  background: rgba(30, 30, 46, 0.95);
+  border: 2px solid rgba(203, 166, 247, 0.5);
+  border-radius: 12px;
+  font-family: "JetBrains Mono Nerd Font", "Noto Sans", sans-serif;
+  font-size: 14px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* Input field styling */
+#input {
+  margin: 8px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 2px solid rgba(203, 166, 247, 0.3);
+  background: rgba(49, 50, 68, 0.8);
+  color: #cdd6f4;
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+#input:focus {
+  border-color: #cba6f7;
+  box-shadow: 0 0 0 2px rgba(203, 166, 247, 0.2);
+}
+
+#input::placeholder {
+  color: #6c7086;
+}
+
+/* Container styling */
+#inner-box {
+  margin: 0;
+  padding: 8px;
+  background: transparent;
+}
+
+#outer-box {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+#scroll {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+/* Entry styling with proper icon layout */
+#entry {
+  padding: 8px 12px;
+  margin: 2px;
+  border-radius: 8px;
+  background: transparent;
+  color: #cdd6f4;
+  transition: all 0.15s ease;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  border: 1px solid transparent;
+}
+
+#entry:nth-child(odd) {
+  background: rgba(49, 50, 68, 0.2);
+}
+
+#entry:hover {
+  background: rgba(203, 166, 247, 0.15);
+  border-color: rgba(203, 166, 247, 0.3);
+  transform: translateX(2px);
+}
+
+#entry:selected {
+  background: rgba(203, 166, 247, 0.8);
+  color: #1e1e2e;
+  border-color: #cba6f7;
+  transform: translateX(4px);
+}
+
+/* Icon positioning - LEFT SIDE */
+#img {
+  margin-right: 12px;
+  margin-left: 0;
+  border-radius: 6px;
+  min-width: 32px;
+  min-height: 32px;
+  background: transparent;
+  order: 0; /* Ensure icon comes first */
+}
+
+#entry:hover #img {
+  transform: scale(1.05);
+}
+
+#entry:selected #img {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+/* Text styling */
+#text {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  flex: 1;
+  order: 1; /* Text comes after icon */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#entry:selected #text {
+  color: #1e1e2e;
+  font-weight: 600;
+}
+
+/* Scrollbar */
+scrollbar {
+  width: 4px;
+}
+
+scrollbar track {
+  background: rgba(49, 50, 68, 0.3);
+  border-radius: 2px;
+}
+
+scrollbar thumb {
+  background: rgba(203, 166, 247, 0.5);
+  border-radius: 2px;
+}
+
+scrollbar thumb:hover {
+  background: rgba(203, 166, 247, 0.7);
+}
